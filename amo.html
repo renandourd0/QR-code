@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carta de Amor</title>
+    <style>
+        /* Estilos gerais */
+        body {
+            font-family: 'Georgia', serif;
+            background-color: #f9f4f1;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #4a2c2a;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Corpos dos corações */
+        .heart {
+            position: absolute;
+            font-size: 3em;
+            animation: heartFall 6s infinite ease-in-out;
+            opacity: 0;
+        }
+
+        @keyframes heartFall {
+            0% {
+                top: -10%;
+                opacity: 1;
+                transform: scale(1) translateX(0);
+            }
+            50% {
+                top: 60%;
+                opacity: 0.6;
+                transform: scale(1.2);
+            }
+            100% {
+                top: 100%;
+                opacity: 0;
+                transform: scale(0.8) translateX(-10px);
+            }
+        }
+
+        /* Container da carta */
+        .letter {
+            background-color: #fff;
+            border: 1px solid #f4c2c2;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 600px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transform: rotate(-2deg);
+            position: relative;
+            z-index: 2;
+            animation: slideUp 2s ease-out forwards;
+        }
+
+        .letter h1 {
+            font-size: 2.5em;
+            color: #e84c3d;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            animation: glow 1.5s ease-in-out infinite alternate;
+            cursor: pointer;
+            text-shadow: 0 0 15px rgba(255, 0, 0, 0.4);
+        }
+
+        .letter p {
+            font-size: 1.3em;
+            line-height: 1.6;
+            color: #5f3d3d;
+            margin-bottom: 20px;
+        }
+
+        .letter .signature {
+            font-size: 1.5em;
+            font-style: italic;
+            color: #e84c3d;
+            margin-top: 40px;
+        }
+
+        /* Animações de entrada */
+        @keyframes slideUp {
+            0% {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes glow {
+            0% {
+                text-shadow: 0 0 20px rgba(255, 0, 0, 0.3), 0 0 40px rgba(255, 0, 0, 0.3);
+            }
+            100% {
+                text-shadow: 0 0 25px rgba(255, 0, 0, 1), 0 0 50px rgba(255, 0, 0, 0.8);
+            }
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .letter {
+                padding: 20px;
+                width: 85%;
+            }
+
+            .letter h1 {
+                font-size: 2em;
+            }
+
+            .letter p {
+                font-size: 1.1em;
+            }
+
+            .letter .signature {
+                font-size: 1.3em;
+            }
+
+            /* Ajustes nos corações para telas menores */
+            .heart {
+                font-size: 2em;
+                animation-duration: 8s; /* Corações caem mais lentamente no mobile */
+            }
+
+            /* Botão ajustado para mobile */
+            .play-button {
+                font-size: 1.2em;
+                padding: 15px 25px;
+                background-color: #e84c3d;
+                color: white;
+                border: none;
+                border-radius: 25px;
+                cursor: pointer;
+                transition: background-color 0.3s, transform 0.2s;
+                position: absolute;
+                bottom: 30px;
+                left: 50%;
+                transform: translateX(-50%);
+                z-index: 3;
+            }
+
+            .play-button:hover {
+                background-color: #d43d31;
+                transform: translateX(-50%) scale(1.1);
+            }
+        }
+
+        /* Efeito de hover na carta */
+        .letter:hover {
+            transform: rotate(0deg);
+            box-shadow: 0 15px 45px rgba(0, 0, 0, 0.2);
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Corpos dos corações -->
+    <div class="heart" style="left: 5%; animation-delay: 0s;">&#10084;&#65039;</div>
+    <div class="heart" style="left: 20%; animation-delay: 1s;">&#10084;&#65039;</div>
+    <div class="heart" style="left: 40%; animation-delay: 2s;">&#10084;&#65039;</div>
+    <div class="heart" style="left: 60%; animation-delay: 3s;">&#10084;&#65039;</div>
+    <div class="heart" style="left: 80%; animation-delay: 4s;">&#10084;&#65039;</div>
+
+    <!-- Container da carta -->
+    <div class="letter">
+        <h1> Eu te amo!</h1>
+        <p>Bruna, meu amor,</p>
+        <p>Desde o momento em que nossos caminhos se cruzaram, minha vida nunca mais foi a mesma. Cada dia contigo é uma nova descoberta, um novo sorriso, uma nova razão para acreditar que o amor é o que faz a vida valer a pena.</p>
+        <p>Você traz alegria, calma e calor ao meu mundo, e é com você que quero compartilhar todos os meus sonhos e todos os meus momentos. Cada batida do meu coração é para você, e eu sou grato por você ser parte da minha vida.</p>
+        <p>Com você, encontrei o meu lar, meu lugar de paz e felicidade. Te amo mais do que palavras podem expressar, e cada momento ao seu lado é um presente que desejo que nunca acabe.</p>
+        <p class="signature">Ass: Renan Dourado</p>
+        
+    </div>
+
+    <!-- Música de fundo (autoplay ativado) -->
+    <audio id="audio" autoplay loop>
+        <source src="amo.mp3" type="audio/mp3">
+        Seu navegador não suporta a tag de áudio.
+    </audio>
+
+    <!-- Botão para tocar música -->
+    <button class="play-button" onclick="document.getElementById('audio').play()">Clique para ouvir a música</button>
+
+</body>
+</html>
